@@ -1,0 +1,12 @@
+# This file is created automatically at plugins/SpearSMPPlugin/players.yml
+# the first time the plugin runs — you do NOT need to create it yourself.
+# Shown here purely as documentation of the on-disk format.
+
+players:
+  069a79f4-44e9-4726-a5be-fca90e38aaf5:
+    crafted:
+      - legendary
+  57f8a978-8d5d-4550-9d4a-8b5471091e01:
+    crafted:
+      - legendary
+      - godly

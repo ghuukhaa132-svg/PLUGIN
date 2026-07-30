@@ -1,0 +1,105 @@
+# =====================================================
+#              Spear SMP Plugin - config.yml
+# =====================================================
+# Everything here is hot-reloadable with /spear reload.
+# Damage values are in half-hearts (2 = 1 heart), matching
+# Bukkit's EntityDamageEvent damage scale.
+
+storage:
+  # "yaml" (players.yml) or "sqlite" (players.db)
+  type: yaml
+
+spears:
+  legendary:
+    display-name: "&b&lLegendary Spear"
+    lore:
+      - "&7A blade forged from fallen stars."
+      - "&7Dash through your enemies and vanish"
+      - "&7from sight itself."
+      - ""
+      - "&d&lDasher &7- Shift + Right Click"
+      - "&d&lInvisibility &7- Right Click (while sneaking, after Dasher)"
+    custom-model-data: 100001
+    material: TRIDENT
+    glow: true
+    unbreakable: true
+    permission: spear.use.legendary
+
+    abilities:
+      dasher:
+        distance-blocks: 5
+        damage: 6.0            # 3 hearts
+        cooldown-seconds: 30
+        ignore_hunger: true
+        ignore_slowdown: true
+        sound: ENTITY_ENDER_DRAGON_FLAP
+        particle: CLOUD
+        particle-count: 40
+      invis:
+        duration-seconds: 15
+        cooldown-seconds: 30
+        hide-armor: true
+        sound: ENTITY_ENDERMAN_TELEPORT
+        particle: PORTAL
+        particle-count: 60
+
+    recipe:
+      enabled: true
+      key: "legendary_spear"
+      shape:
+        - "NDN"
+        - "NSN"
+        - " N "
+      ingredients:
+        N: NETHERITE_INGOT
+        D: DIAMOND_BLOCK
+        S: STICK
+      result-amount: 1
+
+  godly:
+    display-name: "&6&lGodly Spear"
+    lore:
+      - "&7Wielded by those who ascend beyond mortals."
+      - ""
+      - "&6&lGodly Smash &7- Shift + Right Click"
+    custom-model-data: 100002
+    material: TRIDENT
+    glow: true
+    unbreakable: true
+    permission: spear.use.godly
+
+    abilities:
+      godly_smash:
+        launch-height-blocks: 10
+        damage: 10.0            # 5 hearts
+        radius-blocks: 10.0
+        cooldown-seconds: 30
+        knockback-strength: 1.5
+        sound-launch: ENTITY_WARDEN_SONIC_BOOM
+        sound-impact: ENTITY_GENERIC_EXPLODE
+        particle: EXPLOSION_EMITTER
+        particle-count: 3
+        ring-particle: FLAME
+        ring-particle-count: 100
+
+    recipe:
+      enabled: true
+      key: "godly_spear"
+      shape:
+        - "NGN"
+        - "NSN"
+        - " N "
+      ingredients:
+        N: NETHERITE_INGOT
+        G: NETHER_STAR
+        S: BLAZE_ROD
+      result-amount: 1
+
+# Global ability activation settings
+activation:
+  # Sneak + right click triggers the "primary" ability (Dasher / Godly Smash)
+  # Plain right click while sneaking, within this many seconds of using the
+  # primary ability, triggers the secondary ability (Invis) for spears that have one.
+  secondary-activation-window-seconds: 5
+
+

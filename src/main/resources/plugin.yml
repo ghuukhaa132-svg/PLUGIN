@@ -1,0 +1,33 @@
+name: SpearSMPPlugin
+version: '${project.version}'
+main: com.spearsmp.SpearSMPPlugin
+api-version: '1.21'
+author: SpearSMP
+description: Custom heavenly spears with unique abilities, one-time-craft recipes, and full config support.
+folia-supported: false
+
+# Resolved automatically by Paper's library loader at startup (requires the
+# server to have internet access on first boot to fetch it from Maven Central).
+# Only used when storage.type is set to 'sqlite' in config.yml.
+libraries:
+  - org.xerial:sqlite-jdbc:3.45.1.0
+
+commands:
+  spear:
+    description: Main command for the Spear SMP plugin.
+    usage: /spear <give|reload|resetcraft> [args]
+    permission: spear.command
+
+permissions:
+  spear.admin:
+    description: Allows access to all admin subcommands (give, reload, resetcraft).
+    default: op
+  spear.command:
+    description: Allows use of the base /spear command.
+    default: true
+  spear.use.legendary:
+    description: Allows using the Legendary Spear's abilities.
+    default: true
+  spear.use.godly:
+    description: Allows using the Godly Spear's abilities.
+    default: true

@@ -1,0 +1,30 @@
+# =====================================================
+#            Spear SMP Plugin - messages.yml
+# =====================================================
+# All player-facing text. Legacy '&' color codes supported.
+# Placeholders like %player% / %spear% / %seconds% are substituted
+# at send-time - see each message's usage in the code/comments below.
+
+actionbar:
+  cooldown-format: "&c%spear% on cooldown: &f%seconds%s"
+  invis-countdown-format: "&d&lInvisible: &f%seconds%s remaining"
+
+messages:
+  prefix: "&8[&b&lSpear&r&8] "
+
+  # Crafting
+  already-crafted: "&cYou have already crafted this legendary weapon."
+
+  # Permissions / usage
+  no-permission: "&cYou do not have permission to do that."
+  give-usage: "&cUsage: /spear give <player> <legendary|godly>"
+  give-success: "&aGave %spear% to %player%."
+  give-received: "&aYou received a %spear%!"
+  reload-success: "&aConfiguration reloaded successfully."
+  resetcraft-usage: "&cUsage: /spear resetcraft <player> [spear]"
+  resetcraft-success: "&aReset crafting history for %player%."
+  resetcraft-success-single: "&aReset %spear% crafting history for %player%."
+  player-not-found: "&cPlayer not found or has never joined."
+  invalid-spear: "&cUnknown spear type. Valid types: legendary, godly."
+  ability-on-cooldown: "&cThat ability is on cooldown."
+  unknown-command: "&cUnknown subcommand. Use /spear give|reload|resetcraft."
